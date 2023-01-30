@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <h1><u>Product Details:</u></h1>
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Product Name</th>
+            <th>Description</th>
+            <th>Amount</th>
+            <th>Brand</th>
+            <th>category</th>
+            <th>Image</th>
+        </tr>
+        <tr>
+            <td>{{data ? data.id : 'NA'}}</td>
+            <td>{{data ? data.title : 'NA'}}</td>
+            <td>{{data ? data.description : 'NA'}}</td>
+            <td>{{data ? data.price : 'NA'}}</td>
+            <td>{{data ? data.brand : 'NA'}}</td>
+            <td>{{data ? data.category : 'NA'}}</td>
+            <td>
+                <img src="{{data ? data.thumbnail : 'NA'}}" height="100px;" width="100px;">
+            </td>
+        </tr>
+    </table>
+    <a [routerLink]="['/list']">back</a>
+</body>
+</html>

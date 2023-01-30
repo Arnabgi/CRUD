@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <h1>Add Data: </h1>
+    <form [formGroup]="addProductForm">
+        <div class="row">
+            <label>Title</label>
+            <input type="text" formControlName="title">
+        </div>
+        <div class="row">
+            <label>Description</label>
+            <input type="text" formControlName="description">
+        </div>
+        <div class="row">
+            <label>Price</label>
+            <input type="number" formControlName="price">
+        </div>
+        <div class="row">
+            <input type="button" value="add" (click)="addData()" *ngIf="!data"> 
+            <input type="button" value="edit" (click)="addData()" *ngIf="data">
+        </div>
+    </form>
+</body>
+</html>

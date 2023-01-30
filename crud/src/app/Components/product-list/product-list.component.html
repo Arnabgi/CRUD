@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="row">
+        <a [routerLink]="['/add']">Add Product</a>
+    </div>
+    <u><h1>Product List:</h1></u>
+    <table>
+      <tr>
+          <th>Id</th>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Price</th>
+          <th>Brand</th>
+          <th>Category</th>
+          <th>Image</th>
+          <th>Action</th>
+      </tr>
+      <tr *ngFor="let value of data">
+        <td>{{value.id ? value.id : 'NA'}}</td>
+        <td>{{value.title ? value.title : 'NA'}}</td>
+        <td>{{value.description ? value.description : 'NA'}}</td>
+        <td>{{value.price ? value.price : 'NA'}}</td>
+        <td>{{value.brand ? value.brand : 'NA'}}</td>
+        <td>{{value.category ? value.category : 'NA'}}</td>
+        <td><img src="{{value.thumbnail ? value.thumbnail : ''}}" height="100px;" width="100px;"></td>
+        <td>
+          <i class="fa fa-trash" (click)="deleteProduct(value.id)"></i> 
+          <!-- &nbsp; -->
+          <i class="fa fa-eye" (click)="viewProduct(value.id)"></i>
+          <!-- &nbsp; -->
+          <i class="fa fa-edit" (click)="editProduct(value.id)"></i>
+        </td>
+      </tr>
+    </table>
+</body>
+</html>
